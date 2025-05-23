@@ -15,21 +15,29 @@ public class EmailValidatorObject {
     private static final Pattern pattern = Pattern.compile(emailRegex);
 
     public static void validateEmail(String email) {
-        if (StringUtils.isEmpty(email)) {
-            log.info("Email: {} is not a valid emailOrPhoneNumber address.", email);
+
+        if (StringUtils.isEmpty(email.trim())) {
+            log.info("Email: {} is not a valid email address.", email);
             throw new IllegalArgumentException(ErrorMessages.EMAIL_EMPTY);
         }
         if (!org.apache.commons.validator.routines.EmailValidator.getInstance().isValid(email.trim())){
             throw new IllegalArgumentException(ErrorMessages.INVALID_EMAIL_ADDRESS);
         }
 
-        if (!pattern.matcher(email).matches()) {
+        if (!pattern.matcher(email.trim()).matches()) {
             throw new IllegalArgumentException(ErrorMessages.INVALID_EMAIL_ADDRESS);
         }
     }
 
-    public static boolean isEmailValid(String email){
-        return pattern.matcher(email).matches();
+    public static boolean isEmailValid(String email) {
+        if (StringUtils.isEmpty(email)) {
+            return false;
+        }
+        String trimmed = email.trim();
+        if (!org.apache.commons.validator.routines.EmailValidator.getInstance().isValid(trimmed)) {
+            return false;
+        }
+        return pattern.matcher(trimmed).matches();
     }
 
 }

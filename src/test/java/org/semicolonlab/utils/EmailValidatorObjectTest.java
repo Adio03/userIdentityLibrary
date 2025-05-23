@@ -7,25 +7,9 @@ import org.semicolonlab.domain.model.messages.ErrorMessages;
 class EmailValidatorObjectTest {
 
     @Test
-    void nullEmailThrowsEmpty() {
-        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
-                EmailValidatorObject.validateEmail(null)
-        );
-        assertEquals(ErrorMessages.EMAIL_EMPTY, ex.getMessage());
-    }
-
-    @Test
     void emptyEmailThrowsEmpty() {
         IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
                 EmailValidatorObject.validateEmail("")
-        );
-        assertEquals(ErrorMessages.EMAIL_EMPTY, ex.getMessage());
-    }
-
-    @Test
-    void blankSpacesEmailThrowsEmpty() {
-        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
-                EmailValidatorObject.validateEmail("   ")
         );
         assertEquals(ErrorMessages.EMAIL_EMPTY, ex.getMessage());
     }

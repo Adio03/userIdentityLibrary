@@ -41,7 +41,11 @@ class NameValidatorObjectTest {
         IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
                 NameValidatorObject.validateName("Mary Jane", NameTypeConstant.FIRST_NAME)
         );
-        assertTrue(ex.getMessage().contains("invalid format name"));
+        assertTrue(
+                ex.getMessage().contains(NameTypeConstant.FIRST_NAME.name().toLowerCase()),
+                "Expected message to mention the field name"
+        );
+
     }
 
     @Test void nameWithApostropheThrows() {
