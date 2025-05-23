@@ -1,0 +1,7 @@
+package org.semicolonlab.domain.model.enums;
+
+public enum NameTypeConstant {
+    LAST_NAME,FIRST_NAME,ADDRESS,LANDMARK,CITY,STREET,STATE,LGA,CLIENT_NAME,REALM_NAME, ACCESS_TOKEN,
+    PHONE_NUMBER, ID,USER_ID, MIDDLE_NAME,PASSWORD,EMAIL
+
+}
