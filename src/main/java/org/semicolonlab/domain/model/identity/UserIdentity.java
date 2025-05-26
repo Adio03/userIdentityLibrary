@@ -1,7 +1,6 @@
 package org.semicolonlab.domain.model.identity;
 
 import lombok.*;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -31,25 +30,16 @@ public class UserIdentity{
     private boolean enabled;
     private boolean accountLocked;
     private String displayPicture;
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssXXXXX'['VV']'")
-    private ZonedDateTime lockExpirationTime;
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssXXXXX'['VV']'")
-    private ZonedDateTime lastFailedLoginAttempt;
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssXXXXX'['VV']'")
-    private ZonedDateTime dateCreated;
     private boolean emailOTPEnabled;
     private boolean enabledMfaVerification;
     private Long failedLoginAttempts;
     private String secretKey;
     private String accessToken;
     private String refreshToken;
-    private String bvn;
-    private String nin;
-    private String keycloakClientId;
     private LocalDateTime tokenExpirationTime;
     private boolean enabledSecurityQuestion;
     private String passportNumber;
-    private boolean kycComplete;
+
 
     public UserIdentity(String email, String password) {
         this.email = email.trim();
