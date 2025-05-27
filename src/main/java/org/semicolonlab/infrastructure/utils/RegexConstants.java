@@ -1,4 +1,4 @@
-package org.semicolonlab.utils;
+package org.semicolonlab.infrastructure.utils;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

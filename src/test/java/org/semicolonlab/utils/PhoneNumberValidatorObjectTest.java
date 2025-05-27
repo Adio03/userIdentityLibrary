@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import org.semicolonlab.domain.model.messages.ErrorMessages;
+import org.semicolonlab.infrastructure.utils.PhoneNumberValidatorObject;
 
 class PhoneNumberValidatorObjectTest {
 

@@ -3,6 +3,7 @@ package org.semicolonlab.utils;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.semicolonlab.domain.model.enums.NameTypeConstant;
+import org.semicolonlab.infrastructure.utils.NameValidatorObject;
 
 
 class NameValidatorObjectTest {
