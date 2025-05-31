@@ -17,7 +17,6 @@ public class EmailValidatorObject {
     public static void validateEmail(String email) {
 
         if (StringUtils.isEmpty(email.trim())) {
-            log.info("Email: {} is not a valid email address.", email);
             throw new IllegalArgumentException(ErrorMessages.EMAIL_EMPTY);
         }
         if (!org.apache.commons.validator.routines.EmailValidator.getInstance().isValid(email.trim())){

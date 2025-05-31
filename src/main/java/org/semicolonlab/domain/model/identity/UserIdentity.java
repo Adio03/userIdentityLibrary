@@ -52,7 +52,6 @@ public class UserIdentity{
     }
 
     public void setPassword(String password) {
-        log.info("Password to be set: {}",password);
         PasswordValidatorObject.validatePassword(RegexConstants.PASSWORD_REGEX_PATTERN, password);
         this.password = password.trim();
     }
@@ -89,8 +88,6 @@ public class UserIdentity{
         GeneralValidatorObject.validate(accessToken, NameTypeConstant.ACCESS_TOKEN);
         this.accessToken = accessToken;
     }
-
-
 
     public boolean isActive () {
         return this.emailVerified && this.enabled;

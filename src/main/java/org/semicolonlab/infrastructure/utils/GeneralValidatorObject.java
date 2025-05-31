@@ -12,7 +12,6 @@ public class GeneralValidatorObject {
 
     public static void validate(String name, NameTypeConstant constant)  {
         if (StringUtils.isEmpty(name) || StringUtils.isBlank(name) || StringUtils.isEmpty(name.trim()) || name.equals(ErrorMessages.UNDEFINED)) {
-            log.info("validation password ======>>> {}", name);
             throw new IllegalArgumentException(String.format(ErrorMessages.CANNOT_BE_EMPTY_OR_NULL,constant));
         }
     }

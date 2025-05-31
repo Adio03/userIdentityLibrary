@@ -14,7 +14,7 @@ public class PasswordValidatorObject {
 
     public static void validatePassword(String passwordPattern, String password) {
         if (StringUtils.isEmpty(passwordPattern) || StringUtils.isEmpty(password)) {
-            log.info("validation password ======>>> {}", password);
+
             throw new IllegalArgumentException(String.format(ErrorMessages.CANNOT_BE_EMPTY_OR_NULL, "Password"));
         }
         Pattern pattern = Pattern.compile(passwordPattern);

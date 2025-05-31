@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-org.semicolonlab.infrastructure.output.config.JpaRepoAutoConfiguration,\
-  org.semicolonlab.infrastructure.output.config.MongoRepoAutoConfiguration
